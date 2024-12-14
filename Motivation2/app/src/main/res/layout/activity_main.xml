@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/quoteCard"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/bg_gradient"> <!-- Fond dégradé -->
+
+    <!-- Barre supérieure avec "Citations" et "Favoris" -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_alignParentTop="true"
+        android:padding="8dp">
+
+        <!-- Titre "Citations" -->
+        <TextView
+            android:id="@+id/citationsTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Citations"
+            android:fontFamily="cursive"
+            android:textSize="38sp"
+            android:textColor="#FFFFFF"
+            android:layout_weight="1"
+            android:gravity="start"
+            android:layout_marginStart="8dp" />
+
+        <!-- Bouton "Favoris" -->
+        <Button
+            android:id="@+id/favoritesButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mes favoris"
+            android:textSize="16sp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:padding="16dp" />
+    </LinearLayout>
+
+    <!-- Carte carrée pour afficher la citation -->
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true"
+        android:padding="16dp"
+        android:background="@drawable/quote_card_bg"
+        android:elevation="4dp">
+        <!-- Texte de la citation -->
+        <TextView
+            android:id="@+id/quoteTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:lineSpacingExtra="4dp" />
+        <!-- Auteur de la citation -->
+        <TextView
+            android:id="@+id/authorTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#B3FFFFFF"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp" />
+    </RelativeLayout>
+
+    <!-- Section des icônes (Share et Heart) en bas de la carte de citation -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_below="@id/quoteTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="600dp"
+        tools:ignore="NotSibling">
+
+        <!-- Icône de partage -->
+        <ImageView
+            android:id="@+id/shareIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/share"
+            app:tint="@color/white"
+            android:contentDescription="Share icon" />
+        <!-- Bouton "Choisir l'heure" -->
+        <ImageView
+            android:id="@+id/selectTimeButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/cloche"
+            android:contentDescription="Favorite icon"
+            app:tint="@color/white" />
+
+
+
+        <!-- Icône de cœur -->
+        <ImageView
+            android:id="@+id/favoriteIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/heart_selector"
+            android:contentDescription="Favorite icon"
+            app:tint="@color/white"/>
+    </LinearLayout>
+
+
+</RelativeLayout>
